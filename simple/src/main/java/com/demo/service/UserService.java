@@ -16,7 +16,7 @@ public class UserService {
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession session = sqlSessionFactory.openSession();
         try {
-            User user = (User) session.selectOne("com.jin.models.UserMapper.selectUserByID", 1);
+            User user = (User) session.selectOne("com.demo.dao.UserMapper.selectUserByID", 1);
             System.out.println(user.getUsername());
         } finally {
             session.close();
